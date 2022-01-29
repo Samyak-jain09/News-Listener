@@ -168,15 +168,22 @@
                 </div>
             </div>
         </div>
-
-
+        
         <div class="ml-56 pl-2 w-full">
+            <div class="ml-72 mb-10 text-5xl pt-4 font-serif font-medium underline		">
+                {% if search %}
+                {{search}}
+                {% else %}
+                Home
+                {% endif %}
+            </div>
             <div class="container" id="articles-container">
+                
                 {% for value in data %}
-                <div class="card mb-3 box" style="max-width: 640px; margin:auto;">
+                <div class="card mb-3 box" style="max-width: 700px; margin:auto;">
                     <div class="row">
-                        <div class="col-md-8">
-                            <div class="card-body">
+                        
+                            <!-- <div class="card-body">
                                 <h5 class="card-title"><a href="{{value.url}}" target="_blanck">{{value.title}}</a></h5>
                                 <p class="card-text js-desc-{{ forloop.counter }}" hidden>{{value.description}}</p>
                                 <p class="card-text"><small class="text-muted">{{value.publishedat}}</small></p>
@@ -194,14 +201,54 @@
 
 
                                 </script>
-                            </div>
-                        </div>
+                            </div> -->
 
-                        <div class="col-md-4 img-box">
+                            <div class="bg-white overflow-hidden border-b-4 border-blue-500 w-full">
+                                <img src="{{value.image}}" alt="People" class="w-full object-cover h-32 sm:h-48 md:h-64">
+                                <div class="p-4 md:p-6">
+                                  <p class="text-blue-500 font-semibold text-xs mb-1 leading-none">News</p>
+                                  <h3 class="card-title font-semibold mb-2 text-xl leading-tight sm:leading-normal" href="{{value.url}}" target="_blanck">{{value.title}}</h3>
+                                  <div class="text-sm flex items-center">
+                                    <svg class="opacity-75 mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="12" height="12" viewBox="0 0 97.16 97.16" style="enable-background:new 0 0 97.16 97.16;" xml:space="preserve">
+                                      <path d="M48.58,0C21.793,0,0,21.793,0,48.58s21.793,48.58,48.58,48.58s48.58-21.793,48.58-48.58S75.367,0,48.58,0z M48.58,86.823    c-21.087,0-38.244-17.155-38.244-38.243S27.493,10.337,48.58,10.337S86.824,27.492,86.824,48.58S69.667,86.823,48.58,86.823z"/>
+                                      <path d="M73.898,47.08H52.066V20.83c0-2.209-1.791-4-4-4c-2.209,0-4,1.791-4,4v30.25c0,2.209,1.791,4,4,4h25.832    c2.209,0,4-1.791,4-4S76.107,47.08,73.898,47.08z"/>
+                                    </svg>
+                                    <p class="card-text"><small class="text-muted">{{value.publishedat}}</small></p>
+                                    
+                                  </div>
+                                </div>
+                                <p class="card-text js-desc-{{ forloop.counter }}" hidden>{{value.description}}</p>
+                                    
+                                    <button class="js-button-{{ forloop.counter }} ml-4 mb-4 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-gray-300 py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                                        Listen
+                                      </button>
+                                    <script>
+                                        $(".js-button-{{ forloop.counter }}").on("click", function (e) {
+    
+    
+                                            responsiveVoice.speak($(".js-desc-{{ forloop.counter }}").text());
+    
+    
+                                        });
+    
+    
+    
+    
+                                    </script>
+                              </div>
+
+                        
+
+                        <!-- <div class="col-md-4 img-box">
                             <img src="{{value.image}}" class="card-img" alt="..." height="100%">
-                        </div>
+                        </div> -->
                     </div>
                 </div>
+
+
+                
+
+
                 {% endfor %}
             </div>
         </div>
@@ -219,7 +266,7 @@
 
 
 </body>
-<style>
+<!-- <style>
     #articles-container {
         margin-left: 250px;
     }
@@ -248,7 +295,7 @@
         text-align: center;
         display: none;
     }
-</style>
+</style> -->
 <script src="{% static 'js/main.js' %}"> </script>
 
 </html>
