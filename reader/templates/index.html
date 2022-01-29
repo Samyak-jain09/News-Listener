@@ -1,0 +1,254 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=3OKyM6q3"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>News App</title>
+</head>
+
+<body>
+
+
+
+    <div class=" min-h-screen flex flex-row bg-gray-100">
+        
+        <!-- component -->
+        <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800">
+            <div class="fixed flex flex-col top-0 left-0 w-64 bg-gray-900 h-full shadow-lg">
+                <div class="flex items-center pl-6 h-20 border-b border-gray-800">
+                    <div class="ml-1">
+                        <p class="ml-1 text-xl font-medium tracking-wide truncate text-gray-100 font-sans">News App</p>
+
+                    </div>
+                </div>
+                <div class="overflow-y-auto overflow-x-hidden flex-grow">
+                    <ul class="flex flex-col py-6 space-y-1">
+                        <li class="px-5">
+                            <div class="flex flex-row items-center h-8">
+                                <div class="flex font-semibold text-sm text-gray-300 my-4 font-sans uppercase">
+                                    Categories</div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="{% url 'Home' %}"
+                                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6">
+                                <span class="inline-flex justify-center items-center ml-4">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'Home' %}?search=top"
+                                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6">
+                                <span class="inline-flex justify-center items-center ml-4">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Top News</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'Home' %}?search=Business"
+                                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6">
+                                <span class="inline-flex justify-center items-center ml-4">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Business</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'Home' %}?search=Technology"
+                                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6">
+                                <span class="inline-flex justify-center items-center ml-4">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Technology</span>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="{% url 'Home' %}?search=Entertainment"
+                                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6">
+                                <span class="inline-flex justify-center items-center ml-4">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Entertainment</span>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="{% url 'Home' %}?search=Sports"
+                                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6">
+                                <span class="inline-flex justify-center items-center ml-4">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Sports</span>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="{% url 'Home' %}?search=Science"
+                                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6">
+                                <span class="inline-flex justify-center items-center ml-4">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Science</span>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="{% url 'Home' %}?search=Health"
+                                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6">
+                                <span class="inline-flex justify-center items-center ml-4">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Health</span>
+                            </a>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ml-56 pl-2 w-full">
+            <div class="container" id="articles-container">
+                {% for value in data %}
+                <div class="card mb-3 box" style="max-width: 640px; margin:auto;">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="{{value.url}}" target="_blanck">{{value.title}}</a></h5>
+                                <p class="card-text js-desc-{{ forloop.counter }}" hidden>{{value.description}}</p>
+                                <p class="card-text"><small class="text-muted">{{value.publishedat}}</small></p>
+                                <button class="js-button-{{ forloop.counter }}" type="button">Listen</button>
+                                <script>
+                                    $(".js-button-{{ forloop.counter }}").on("click", function (e) {
+
+
+                                        responsiveVoice.speak($(".js-desc-{{ forloop.counter }}").text());
+
+
+                                    });
+
+
+
+
+                                </script>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 img-box">
+                            <img src="{{value.image}}" class="card-img" alt="..." height="100%">
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+</body>
+<style>
+    #articles-container {
+        margin-left: 250px;
+    }
+
+    .box {
+        transition-property: box-shadow, transform;
+        transition-duration: 1s;
+    }
+
+    .box:hover {
+        /* box-shadow: 2px 2px 5px #8080807a; */
+        box-shadow: 1px 2px 8px 0px #00bcffb0;
+        transform: translateY(-9px);
+    }
+
+    .img-box {
+        padding: 20px;
+    }
+
+    .img-box img {
+        border-radius: 15px;
+        object-fit: cover;
+    }
+
+    #loading {
+        text-align: center;
+        display: none;
+    }
+</style>
+<script src="{% static 'js/main.js' %}"> </script>
+
+</html>
