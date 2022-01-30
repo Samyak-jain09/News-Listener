@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=3OKyM6q3"></script>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    
     <title>Daily News</title>
 </head>
 
@@ -220,7 +221,7 @@
                         <div class="bg-white overflow-hidden border-b-4 border-blue-500 w-full">
                             <img src="{{value.image}}" alt="People" class="w-full object-cover h-32 sm:h-48 md:h-64">
                             <div class="p-4 md:p-6">
-                                <p class="text-blue-500 font-semibold text-xs mb-1 leading-none">News</p>
+                                <p class="text-blue-500 font-semibold text-xs mb-1 leading-none">{{value.author}}</p>
                                 <h3 class="card-title font-semibold mb-2 text-xl leading-tight sm:leading-normal"
                                     href="{{value.url}}" target="_blanck">{{value.title}}</h3>
                                 <div class="text-sm flex items-center">

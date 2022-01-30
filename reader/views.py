@@ -43,7 +43,8 @@ def home(request):
             "description":  "" if i["description"] is None else i["description"],
             "url": i["url"],
             "image":  i["urlToImage"],
-            "publishedat": i["publishedAt"]
+            "publishedat": i["publishedAt"],
+            "author": "News" if i["author"] is None else i["author"],
         })
     
 
